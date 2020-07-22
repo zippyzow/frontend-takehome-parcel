@@ -1,10 +1,48 @@
-.App {
+.app {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.app__header {
+    color: #E75640;
+    font-size: 80px;
+    font-weight: 100;
+    height: 80px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
-.App-header {
-    font-size: 60px;
-    height: 80px;
-    padding: 20px;
+.app__search {
+    margin-bottom: 30px;
+}
+
+.app__searchInput {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    outline: none;
+    padding: 14px 24px;
+    margin-right: 10px;
+}
+
+.app__submitButton {
+    font-family: 'Roboto', sans-serif;
+    background: #E75640;
     color: white;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    outline: none;
+    padding: 14px 24px;
 }

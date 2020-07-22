@@ -21,6 +21,7 @@
   "homepage": "https://github.com/UseFedora/frontend-takehome-parcel#readme",
   "dependencies": {
     "concurrently": "^4.0.1",
+    "css": "^3.0.0",
     "express": "^4.16.3",
     "parcel": "^1.9.7",
     "react": "^16.13.1",
