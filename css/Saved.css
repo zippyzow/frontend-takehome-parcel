@@ -1,9 +1,4 @@
-.home {
-    display: flex;
-    flex-direction: column;
-}
-
-.home__title {
+.saved__title {
     color: #E75640;
     font-size: 80px;
     font-weight: 100;
