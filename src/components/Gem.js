@@ -32,7 +32,6 @@ class Gem extends Component {
   }
 
   onUnsave(event) {
-    event.preventDefault();
     const gemData = this.props.gemData;
 
     removeGem(gemData);

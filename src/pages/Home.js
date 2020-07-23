@@ -10,14 +10,12 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-          <Header />
-          <div className="home">
-            <div className="home__title">
-              Search for Ruby Gems
-            </div>
-            <Search />
-          </div>
+      <div className="home">
+        <Header />
+        <div className="home__title">
+          Search for Ruby Gems
+        </div>
+        <Search />
       </div>
     );
   }
