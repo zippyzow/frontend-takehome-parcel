@@ -6,17 +6,13 @@ class Gem extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      saved: false
-    }
-
     this.onSave = this.onSave.bind(this);
     this.onUnsave = this.onUnsave.bind(this);
   }
 
   onSave(event) {
     event.preventDefault();
-    const gemData = this.props.gemData;
+    const {gemData, onGemToggle} = this.props;
 
     // Only save the properties that are important.
     const gem = {
@@ -27,14 +23,15 @@ class Gem extends Component {
     };
 
     saveGem(gem);
-
-    this.setState({ saved: true });
+    onGemToggle();
   }
 
-  onUnsave() {
-    const gemData = this.props.gemData;
+  onUnsave(event) {
+    event.preventDefault();
+    const {gemData, onGemToggle} = this.props;
 
     removeGem(gemData);
+    onGemToggle();
   }
 
   render() {

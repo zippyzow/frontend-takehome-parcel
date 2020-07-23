@@ -36,8 +36,13 @@ class Search extends Component {
   }
 
   onSetResult = (result, key) => {
-    console.log(result.length < 0)
     this.setState({ results: result, searchComplete: true });
+  }
+
+  onGemToggle = () => {
+    // The state is the local storage.
+    // So this is to get this component to re-render which will fetch the new local storage.
+    this.setState({});
   }
 
   render() {
@@ -60,7 +65,7 @@ class Search extends Component {
           </form>
         </div>
         {noGemsFound ? (<div className="search__noGemsFound">No gems found</div>) : (<div>{results.map(result => (
-          <Gem gemData={result} isSaved={result.name in savedGems} key={result.name} />
+          <Gem gemData={result} isSaved={result.name in savedGems} onGemToggle={this.onGemToggle} key={result.name} />
         ))}
         </div>)}
 

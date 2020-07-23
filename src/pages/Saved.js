@@ -9,6 +9,12 @@ class Saved extends Component {
     super(props);
   }
 
+  onGemToggle = () => {
+    // The state is the local storage.
+    // So this is to get this component to re-render which will fetch the new local storage.
+    this.setState({});
+  }
+
   render() {
     const savedGems = loadSavedGems();
     const gemValues = Object.values(savedGems);
@@ -21,7 +27,7 @@ class Saved extends Component {
         </div>
         <div>{gemValues.length > 0 ? (
             <div>{gemValues.map(gem => (
-              <Gem gemData={gem} isSaved={true} key={gem.name} />
+              <Gem gemData={gem} isSaved={true} onGemToggle={this.onGemToggle} key={gem.name} />
             ))}
             </div>
         ) : <div className="saved__noSavedGems">You have no saved gems</div>}
