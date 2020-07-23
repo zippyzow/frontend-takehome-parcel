@@ -15,5 +15,9 @@ export function saveGem(gem) {
 }
 
 export function removeGem(gem) {
-  localStorage.removeItem(gem.name);
+  const savedGems = loadSavedGems();
+
+  delete savedGems[gem.name];
+
+  localStorage.setItem('savedGems', JSON.stringify(savedGems));
 }
