@@ -12,20 +12,19 @@ class Saved extends Component {
   render() {
     const savedGems = loadSavedGems();
     const gemValues = Object.values(savedGems);
-    console.log(savedGems);
 
     return (
-      <div>
+      <div className="saved">
         <Header />
         <div className="saved__title">
           Saved Gems
         </div>
         <div>{gemValues.length > 0 ? (
             <div>{gemValues.map(gem => (
-              <Gem gemData={gem} isSaved={true} key={gem.name } />
+              <Gem gemData={gem} isSaved={true} key={gem.name} />
             ))}
             </div>
-        ) : <div>You have no saved gems</div>}
+        ) : <div className="saved__noSavedGems">You have no saved gems</div>}
         </div>
       </div>
     )

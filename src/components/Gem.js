@@ -31,7 +31,7 @@ class Gem extends Component {
     this.setState({ saved: true });
   }
 
-  onUnsave(event) {
+  onUnsave() {
     const gemData = this.props.gemData;
 
     removeGem(gemData);

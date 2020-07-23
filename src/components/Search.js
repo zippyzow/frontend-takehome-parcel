@@ -9,7 +9,8 @@ class Search extends Component {
     super(props);
     this.state = {
       query: '',
-      results: []
+      results: [],
+      searchComplete: false
     }
 
     this.onChange = this.onChange.bind(this);
@@ -35,19 +36,21 @@ class Search extends Component {
   }
 
   onSetResult = (result, key) => {
-    this.setState({ results: result });
+    console.log(result.length < 0)
+    this.setState({ results: result, searchComplete: true });
   }
 
   render() {
-    const results = this.state.results;
+    const { results, query, searchComplete } = this.state;
     const savedGems = loadSavedGems();
+    const noGemsFound = query.length > 0 && results.length <= 0 && searchComplete;
 
     return (
       <div>
         <div className="search">
           <form onSubmit={this.onSubmit}>
             <input
-              type="text" value={this.state.query}
+              type="text" value={query}
               onChange={this.onChange}
               className="search__input"
             />
@@ -56,10 +59,11 @@ class Search extends Component {
             </button>
           </form>
         </div>
-        <div>{results.map(result => (
+        {noGemsFound ? (<div className="search__noGemsFound">No gems found</div>) : (<div>{results.map(result => (
           <Gem gemData={result} isSaved={result.name in savedGems} key={result.name} />
         ))}
-        </div>
+        </div>)}
+
       </div>
     );
   }

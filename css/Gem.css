@@ -55,3 +55,7 @@ a:link {
     outline: none;
     padding: 10px 20px;
 }
+
+button:hover {
+    opacity: 0.5;
+}
